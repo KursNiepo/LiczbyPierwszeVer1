@@ -1,0 +1,29 @@
+﻿@model  LiczbyPierwszeVer_1.Models.MyNumber
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Liczby pierwsze</h2>
+@using (Html.BeginForm("Index", "Home",FormMethod.Post , 
+    new { @class="form-horizontal"})) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+    <div class="form-group">
+        <div class="col-lg-2">
+            @Html.LabelFor(m=>m.NumRows)
+            @Html.TextBoxFor(m => m.NumRows)
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-lg-2">
+            @Html.LabelFor(m => m.NumCols)
+            @Html.TextBoxFor(m => m.NumCols)
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-lg-2">
+           <input type="submit" value="Generuj" class="btn btn-primary"/>
+        </div>
+    </div>
+}
+
