@@ -8,11 +8,15 @@ namespace LiczbyPierwszeVer_1.Models
 {
     public class MyNumber
     {
-        [Required]
+        [Required(ErrorMessage = "Podaj liczbę!!")]
+        
         [Range(2,100,ErrorMessage = "Podaj liczbę z zakresu 2 do 100")]
         [Display(Name = "Podaj liczbę wierszy: ")]
         public int NumRows { get; set; }
-        [Required]
+
+
+        [Required(ErrorMessage = "Podaj liczbę!!")]
+        [DataType("To musi być liczba")]
         [Range(2, 100, ErrorMessage = "Podaj liczbę z zakresu 2 do 100")]
         [Display(Name = "Podaj liczbę kolumn: ")]
         public int NumCols { get; set; }

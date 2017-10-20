@@ -19,7 +19,19 @@ namespace LiczbyPierwszeVer_1.Controllers
         //POST: Home
         [HttpPost]
         public ActionResult Index(MyNumber number) {
-            return View(number);
+            List<int> list = null;
+            if (ModelState.IsValid) {
+                ViewBag.OK = true;
+                int limit = number.NumCols * number.NumRows;
+                PrimaryNumbers pn = new PrimaryNumbers();
+                list = pn.GetAllPrimary(limit);
+                ViewBag.List = list;
+            }
+            else {
+                ViewBag.OK = false;
+                ViewBag.List = null;
+            }
+            return View();
         }
     }
 }
