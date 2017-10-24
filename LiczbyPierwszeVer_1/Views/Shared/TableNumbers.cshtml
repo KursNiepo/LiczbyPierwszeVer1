@@ -1,0 +1,27 @@
+﻿@model LiczbyPierwszeVer_1.Models.MyNumber
+
+<h3>Liczby pierwsze w tabelce</h3>
+<table>
+    @{
+        var licznik = 0;
+        List<int> list = ViewBag.List;
+    }
+    @for (var i = 0; i < Model.NumRows; i++)
+    {
+        <tr>
+            @for (var j = 0; j < Model.NumCols; j++)
+            {
+                licznik++;
+                if (list.Any(e => e == licznik))
+                {
+                    <td class="red">@licznik</td>
+                }
+                else
+                {
+                    <td>@licznik</td>
+                }
+            }
+        </tr>
+    }
+
+</table>

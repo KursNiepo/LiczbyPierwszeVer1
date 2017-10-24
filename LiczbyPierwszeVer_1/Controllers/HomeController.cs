@@ -31,7 +31,7 @@ namespace LiczbyPierwszeVer_1.Controllers
                 ViewBag.OK = false;
                 ViewBag.List = null;
             }
-            return View();
+            return View(number);
         }
     }
 }
