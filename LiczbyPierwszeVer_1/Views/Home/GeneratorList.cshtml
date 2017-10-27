@@ -2,14 +2,14 @@
 @{
     ViewBag.Title = "GeneratorList";
 }
-
 <h2>GeneratorList</h2>
 @using (Html.BeginForm("GeneratorList", "Home",FormMethod.Post,new {@class="form-horizontal"}))
 {
     @Html.ValidationSummary(false)
     <div class="form-group">
-       
+      
             @Html.LabelFor(m => m.Quantity,new{@class="control-label col-sm-3"})
+       
         <div class="col-sm-12">
             @Html.EditorFor(m => m.Quantity, new{ @class = "form-control"})
         </div>
