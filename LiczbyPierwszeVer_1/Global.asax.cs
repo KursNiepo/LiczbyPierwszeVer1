@@ -13,6 +13,8 @@ namespace LiczbyPierwszeVer_1
         {
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
+            ClientDataTypeModelValidatorProvider.ResourceClassKey = "Message";
+            DefaultModelBinder.ResourceClassKey = "Message";
         }
     }
 }

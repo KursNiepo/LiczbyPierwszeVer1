@@ -1,0 +1,41 @@
+﻿@model LiczbyPierwszeVer_1.Models.GenList
+@{
+    ViewBag.Title = "GeneratorList";
+}
+
+<h2>GeneratorList</h2>
+@using (Html.BeginForm("GeneratorList", "Home",FormMethod.Post,new {@class="form-horizontal"}))
+{
+    @Html.ValidationSummary(false)
+    <div class="form-group">
+       
+            @Html.LabelFor(m => m.Quantity,new{@class="control-label col-sm-3"})
+        <div class="col-sm-12">
+            @Html.EditorFor(m => m.Quantity, new{ @class = "form-control"})
+        </div>
+    </div>
+    <div class="form-group">
+        
+            @Html.LabelFor(m=>m.Text, new { @class = "control-label col-sm-3" })
+        <div class="col-sm-12">
+            @Html.EditorFor(m => m.Text)
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-offset-3 col-sm-12" style="padding: 0">
+            <input type="submit" class="btn btn-default btn-lg text-left" />
+        </div>
+    </div>
+   
+}
+
+<h3>Generowana lista</h3>
+@if (ViewBag.OK != null && ViewBag.OK == true)
+{
+    <ul>
+        @for (int i = 0; i < Model.Quantity; i++)
+        {
+            <li>@Model.Text</li>
+        }
+    </ul>
+}

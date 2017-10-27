@@ -33,5 +33,21 @@ namespace LiczbyPierwszeVer_1.Controllers
             }
             return View(number);
         }
+
+        public ActionResult GeneratorList()
+        {
+            GenList gl = new GenList();
+            return View(gl);
+        }
+
+        [HttpPost]
+        public ActionResult GeneratorList(GenList gl)
+        {
+            if (ModelState.IsValid)
+            {
+                ViewBag.OK = true;
+            }
+            return View(gl);
+        }
     }
 }

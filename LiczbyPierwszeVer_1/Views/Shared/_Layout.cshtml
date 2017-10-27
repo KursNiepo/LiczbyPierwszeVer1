@@ -12,6 +12,7 @@
         .input-validation-error{ border: 2px solid #f00; background-color: #fee;}
         td.red{ background-color: #f00; color: white;}
         td{ border: solid 1px black; padding: 5px;text-align: center;}
+        input.padd{ padding: 0;}
     </style> 
     <script src="~/Scripts/modernizr-2.6.2.js"></script>
 </head>
@@ -25,6 +26,7 @@
                     <span class="icon-bar"></span>
                 </button>
                 @Html.ActionLink("Generator liczb pierwszych", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("Generator List","GeneratorList","Home",new{area = ""}, new{@class="navbar-brand"})
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
